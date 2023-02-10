@@ -1,0 +1,8 @@
+version: "3.5"
+services:
+  develop:
+    image: react-basic
+    container_name: react-basic
+    build: .
+    ports:
+      - 3002:3000
