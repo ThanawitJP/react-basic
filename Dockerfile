@@ -1,11 +1,19 @@
+# Dockerfile
+
+# Pull the base image
 FROM node:18.14.0-alpine
 
+# Set the working directory
 WORKDIR /app
 
-COPY . .
+# Copy app dependencies to container
+COPY ./package*.json ./
 
-ENV PATH /app/node_modules/.bin:$PATH
-
+# Install dependencies
 RUN npm install
 
-CMD ["npm", "start"]
+# Copy app src to container
+COPY . .
+
+# Deploy app for local development
+CMD ["npm","run","dev-docker"]

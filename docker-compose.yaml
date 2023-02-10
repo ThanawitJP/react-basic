@@ -4,5 +4,8 @@ services:
     image: react-basic
     container_name: react-basic
     build: .
+    volumes:
+       - ./:/app
+       - "/app/node_modules"
     ports:
-      - 3002:3000
+      - 3000:3000
